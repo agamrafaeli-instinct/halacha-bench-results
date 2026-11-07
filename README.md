@@ -2,6 +2,9 @@
 
 *1 November 2026, updated 6 November 2026* · Hebrew summary: [בעברית, בקצרה](#בעברית-בקצרה)
 
+> **Fork proposal:** a [historical semicha reference track](#historical-semicha-reference-track-proposal) is proposed
+> for future benchmarking. It is metadata-only, with no new Q&A or scores. The original results below are unchanged.
+
 **6 November:** three of Meta's Muse models added, run through Meta's Muse Code CLI: Muse Wonder Full, Muse Wonder
 and Muse Spark 1.3. Muse Wonder Full places 8th (60.8); see [Results](#results).
 
@@ -268,6 +271,26 @@ files wait for the end of the review round; `withheld.json` fixes them now. Unti
 files are published, the bundle cannot be used to recompute a score or open a commitment: it fixes these files so that
 any later change can be detected.
 
+## Historical semicha reference track (proposal)
+
+This fork proposes a separate **historical reference and calibration track**, with a 36-question pilot:
+12 from the [Nisan 5765 Issur veHeter paper with answers](https://www.smicha.co.il/gallery/mivchanim_categories-17.doc),
+12 across sittings in [Orel Shivni's Issur veHeter collection](https://www.smicha.co.il/gallery/mivchanim_categories-46.docx),
+and 12 from [Adiel Kapach's Niddah collection](https://www.smicha.co.il/gallery/mivchanim_categories-42.pdf).
+These are proposed allocations; no questions have been selected.
+
+- **Included now:** the [source catalog](datasets/historical-reference/sources.json) and a
+  [curation, rights and evaluation plan](docs/historical-reference.md), including the proposed item metadata.
+- **Before Q&A release:** confirm reuse rights under the [site's terms](https://www.smicha.co.il/terms.php),
+  verify question/answer alignment and citations, obtain rabbinic review, and audit duplicates and overlap.
+  No source documents or Q&A text are copied here. The answers are attributed references, not verified official keys.
+- **Separate reporting:** older public questions may have appeared in model training. This track would support
+  calibration, not a claim of unseen-question performance. It adds no scores to the current leaderboard.
+
+This proposed pilot is distinct from both the **60 Cheshvan 5787 test questions** and the **36 Iyar 5786 development
+questions** already committed in `bundle/`. The bundle and original results are unchanged. No evaluation harness
+or ingestion pipeline is supplied by this proposal, and upstream has not adopted it.
+
 ## Contact
 
 halachabench@gmail.com. Anyone who would like to review the rubrics or grade answers is welcome to write. If you are
@@ -296,5 +319,18 @@ developer; model names are their owners' trademarks.
 כל מי שמעוניין לעבור על המחוונים או לבדוק תשובות, או לשתף פעולה בהרחבת המבחן, מוזמן לכתוב אל
 halachabench@gmail.com. המיזם HalachaBench עצמאי:
 אין לו קשר לרבנות הראשית לישראל, והוא אינו פועל מטעמה או בחסותה.
+
+### הצעה במאגר המפוצל: מסלול ייחוס היסטורי
+
+מוצע מסלול נפרד לכיול ולהערכה עתידית, עם פיילוט מתוכנן של 36 שאלות: 12 באיסור והיתר מניסן תשס״ה,
+12 מאוסף התשובות של אוראל שיבני באיסור והיתר ממועדים שונים, ו־12 מאוסף התשובות של עדיאל קאפח בנידה.
+טרם נבחרו שאלות. נוספו רק [קטלוג מקורות](datasets/historical-reference/sources.json)
+ו[תוכנית עבודה](docs/historical-reference.md), ללא העתקת שאלות או תשובות.
+
+לפני פרסום תוכן יש להסדיר זכויות שימוש, לאמת התאמה בין שאלות לתשובות ומראי מקומות, לבצע בדיקה רבנית
+ולבדוק כפילויות וחפיפה. התשובות הן מקורות ייחוס מיוחסים, ולא מפתחות רשמיים שאומתו.
+אלה חומרים פומביים שעלולים להופיע בנתוני האימון; תוצאותיהם יוצגו בנפרד.
+הפיילוט אינו 36 שאלות הפיתוח מאייר תשפ״ו ואינו משנה את 60 שאלות המבחן מחשוון תשפ״ז, את הציונים או את החבילה החתומה.
+זו הצעה של המאגר המפוצל, שטרם אומצה על ידי הפרויקט המקורי; אין כאן מנגנון הרצה חדש.
 
 </div>
