@@ -27,7 +27,8 @@
   a:hover { color:var(--blue-dark); }
 
   /* one screen at a time, no page scroll */
-  .screen { display:none; height:100dvh; overflow:auto; flex-direction:column; }
+  .language-deck { height:100dvh; display:flex; flex-direction:column; }
+  .screen { display:none; flex:1 1 auto; min-height:0; overflow:auto; flex-direction:column; }
   .screen.on { display:flex; }
   [hidden] { display:none !important; }
 
@@ -40,7 +41,7 @@
   nav.links a:hover { text-decoration:underline; }
   nav.links a.langswitch { border:1.5px solid var(--blue); border-radius:999px; padding:2px 12px; }
 
-  .stage { flex:1 1 auto; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:24px 20px 76px; min-height:0; }
+  .stage { flex:1 0 auto; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:24px 20px 76px; min-height:0; }
   .stage > * { max-width:900px; }
 
   /* hero screen: vibrant gradient */
@@ -104,7 +105,7 @@
 <body>
 
 <!-- ============ ENGLISH ============ -->
-<div id="c-en" lang="en">
+<div id="c-en" class="language-deck" lang="en">
   <header class="topbar">
     <div class="topbar-in">
       <a class="wordmark" href="https://github.com/agamrafaeli-instinct/halacha-bench-results">HalachaBench</a>
@@ -129,6 +130,7 @@
       <div class="ctarow">
         <button class="cta" data-go="1">See the results</button>
         <a class="cta sec" href="https://github.com/HalachaBench/halacha-bench-results">Original repository</a>
+        <button class="cta sec" data-go="3">Future dataset proposal</button>
       </div>
     </div>
   </section>
@@ -175,7 +177,37 @@
           </ul>
         </div>
       </div>
-      <div style="margin-top:16px"><button class="cta" data-go="3">Get involved</button></div>
+      <div style="margin-top:16px"><button class="cta" data-go="3">Future dataset proposal</button></div>
+    </div>
+  </section>
+
+  <section class="screen historical" id="historical-en" aria-labelledby="historical-heading-en">
+    <div class="stage">
+      <p class="kicker">Proposal in this fork</p>
+      <h2 id="historical-heading-en">Historical questions, a separate reference track</h2>
+      <p class="lead"><strong>36 proposed questions. None selected or released yet.</strong> A future pilot for reference-based evaluation and grading calibration, separate from the published results.</p>
+      <div class="cols">
+        <div>
+          <h3>The proposed pilot</h3>
+          <ul>
+            <li>12 from the <a href="https://www.smicha.co.il/gallery/mivchanim_categories-17.doc">Nisan 5765 Issur veHeter paper with answers</a>, attributed to Rabbi Yitzchak Oshinsky.</li>
+            <li>12 across sittings in <a href="https://www.smicha.co.il/gallery/mivchanim_categories-46.docx">Orel Shivni's Issur veHeter collection</a>.</li>
+            <li>12 from <a href="https://www.smicha.co.il/gallery/mivchanim_categories-42.pdf">Adiel Kapach's Niddah collection</a>.</li>
+          </ul>
+          <p>Included now: a <a href="datasets/historical-reference/sources.json">source catalog</a> and <a href="https://github.com/agamrafaeli-instinct/halacha-bench-results/blob/main/docs/historical-reference.md">curation and evaluation plan</a>. No copied Q&amp;A or new scores.</p>
+        </div>
+        <div>
+          <h3>Before any dataset release</h3>
+          <ul class="warnlist">
+            <li>Clear reuse rights under the <a href="https://www.smicha.co.il/terms.php">site's terms</a>; public access is not a redistribution license.</li>
+            <li>Verify question/answer alignment, citations and rabbinic review. These references are not verified official answer keys.</li>
+            <li>Audit duplicate families and overlap. Public historical material may have appeared in model training.</li>
+          </ul>
+          <p>This is not the existing 36-question Iyar 5786 development set. The original 60-question test, leaderboard and sealed bundle stay unchanged. No runnable harness is added.</p>
+        </div>
+      </div>
+      <p class="foot">A proposal by this fork, not an adopted upstream benchmark. Future historical scores would be reported separately.</p>
+      <div style="margin-top:16px"><button class="cta" data-go="4">Get involved</button></div>
     </div>
   </section>
 
@@ -190,10 +222,10 @@
         </div>
         <div class="card">
           <h3>Read the source</h3>
-          <p>Everything here is summarized from the upstream <a href="https://github.com/HalachaBench/halacha-bench-results">README</a>. Read it before quoting any number.</p>
+          <p>The results and methodology are summarized from the upstream <a href="https://github.com/HalachaBench/halacha-bench-results">README</a>. Read it before quoting any number.</p>
         </div>
       </div>
-      <p class="foot"><span class="foothead">About this page.</span> This explainer lives on a public fork maintained by <a href="https://github.com/agamrafaeli-instinct">agamrafaeli-instinct</a> and is not an official HalachaBench page. All results, methodology and caveats are the upstream authors'. HalachaBench is not connected to, or endorsed by, the Chief Rabbinate or any model developer.</p>
+      <p class="foot"><span class="foothead">About this page.</span> This explainer lives on a public fork maintained by <a href="https://github.com/agamrafaeli-instinct">agamrafaeli-instinct</a> and is not an official HalachaBench page. The published results and their methodology and caveats are the upstream authors'. The historical reference proposal is this fork's addition. HalachaBench is not connected to, or endorsed by, the Chief Rabbinate or any model developer.</p>
     </div>
   </section>
 
@@ -205,7 +237,7 @@
 </div>
 
 <!-- ============ HEBREW ============ -->
-<div id="c-he" lang="he" dir="rtl" hidden>
+<div id="c-he" class="language-deck" lang="he" dir="rtl" hidden>
   <header class="topbar">
     <div class="topbar-in">
       <a class="wordmark" href="https://github.com/agamrafaeli-instinct/halacha-bench-results">HalachaBench</a>
@@ -230,6 +262,7 @@
       <div class="ctarow">
         <button class="cta" data-go="1">לתוצאות</button>
         <a class="cta sec" href="https://github.com/HalachaBench/halacha-bench-results">המאגר המקורי</a>
+        <button class="cta sec" data-go="3">הצעה למאגר עתידי</button>
       </div>
     </div>
   </section>
@@ -276,7 +309,37 @@
           </ul>
         </div>
       </div>
-      <div style="margin-top:16px"><button class="cta" data-go="3">להצטרף ולעזור</button></div>
+      <div style="margin-top:16px"><button class="cta" data-go="3">הצעה למאגר עתידי</button></div>
+    </div>
+  </section>
+
+  <section class="screen historical" id="historical-he" aria-labelledby="historical-heading-he">
+    <div class="stage">
+      <p class="kicker">הצעה של המאגר המפוצל</p>
+      <h2 id="historical-heading-he">שאלות היסטוריות, מסלול ייחוס נפרד</h2>
+      <p class="lead"><strong>36 שאלות מתוכננות. טרם נבחרו או פורסמו שאלות.</strong> פיילוט עתידי להערכה מול מקורות ייחוס ולכיול הבדיקה, בנפרד מהתוצאות שפורסמו.</p>
+      <div class="cols">
+        <div>
+          <h3>הפיילוט המוצע</h3>
+          <ul>
+            <li>12 מתוך <a href="https://www.smicha.co.il/gallery/mivchanim_categories-17.doc">מבחן איסור והיתר מניסן תשס״ה עם תשובות</a>, המיוחס לרב יצחק אושינסקי.</li>
+            <li>12 ממועדים שונים ב<a href="https://www.smicha.co.il/gallery/mivchanim_categories-46.docx">אוסף התשובות של אוראל שיבני באיסור והיתר</a>.</li>
+            <li>12 מתוך <a href="https://www.smicha.co.il/gallery/mivchanim_categories-42.pdf">אוסף התשובות של עדיאל קאפח בנידה</a>.</li>
+          </ul>
+          <p>נוספו כעת: <a href="datasets/historical-reference/sources.json">קטלוג מקורות</a> ו<a href="https://github.com/agamrafaeli-instinct/halacha-bench-results/blob/main/docs/historical-reference.md">תוכנית לאיסוף ולהערכה</a>. ללא העתקת שאלות ותשובות או הוספת ציונים.</p>
+        </div>
+        <div>
+          <h3>לפני פרסום מאגר שאלות</h3>
+          <ul class="warnlist">
+            <li>הסדרת זכויות שימוש בהתאם ל<a href="https://www.smicha.co.il/terms.php">תנאי האתר</a>; גישה פומבית אינה רישיון להפצה.</li>
+            <li>אימות התאמה בין שאלות לתשובות ומראי מקומות, ובדיקה רבנית. אלה אינם מפתחות תשובות רשמיים שאומתו.</li>
+            <li>בדיקת משפחות של שאלות דומות וחפיפה. חומרים היסטוריים פומביים עלולים להופיע בנתוני האימון.</li>
+          </ul>
+          <p>אין מדובר ב־36 שאלות הפיתוח מאייר תשפ״ו. 60 שאלות המבחן המקוריות, טבלת הציונים והחבילה החתומה אינן משתנות. לא נוסף מנגנון הרצה.</p>
+        </div>
+      </div>
+      <p class="foot">זו הצעה של המאגר המפוצל, שטרם אומצה על ידי הפרויקט המקורי. ציוני המסלול ההיסטורי יוצגו בנפרד.</p>
+      <div style="margin-top:16px"><button class="cta" data-go="4">להצטרף ולעזור</button></div>
     </div>
   </section>
 
@@ -291,10 +354,10 @@
         </div>
         <div class="card">
           <h3>לקרוא את המקור</h3>
-          <p>כל מה שכאן מסכם את ה-<a href="https://github.com/HalachaBench/halacha-bench-results">README</a> של המקור. קראו אותו לפני שמצטטים מספר כלשהו.</p>
+          <p>התוצאות והמתודולוגיה מסכמות את ה-<a href="https://github.com/HalachaBench/halacha-bench-results">README</a> של המקור. קראו אותו לפני שמצטטים מספר כלשהו.</p>
         </div>
       </div>
-      <p class="foot"><span class="foothead">על העמוד הזה.</span> עמוד ההסבר חי במאגר ציבורי מפוצל (fork) שמתוחזק על ידי <a href="https://github.com/agamrafaeli-instinct">agamrafaeli-instinct</a> ואינו עמוד רשמי של HalachaBench. כל התוצאות, המתודולוגיה וההסתייגויות הן של כותבי המקור. HalachaBench אינו קשור לרבנות הראשית או לחברות המודלים ואינו נתמך על ידן.</p>
+      <p class="foot"><span class="foothead">על העמוד הזה.</span> עמוד ההסבר חי במאגר ציבורי מפוצל (fork) שמתוחזק על ידי <a href="https://github.com/agamrafaeli-instinct">agamrafaeli-instinct</a> ואינו עמוד רשמי של HalachaBench. התוצאות שפורסמו, המתודולוגיה וההסתייגויות שלהן הן של כותבי המקור. ההצעה למסלול ייחוס היסטורי נוספה במאגר המפוצל. HalachaBench אינו קשור לרבנות הראשית או לחברות המודלים ואינו נתמך על ידן.</p>
     </div>
   </section>
 
